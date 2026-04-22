@@ -337,6 +337,109 @@
     margin-bottom: 2px;
   }
 
+  .flight-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 14px;
+  }
+  .flight-card {
+    background: rgba(217, 201, 168, 0.2);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--phoenix);
+    border-radius: 3px;
+    padding: 14px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    position: relative;
+  }
+  .flight-card.portland { border-left-color: var(--portland); }
+  .flight-card.london { border-left-color: var(--london); }
+  .flight-card.barcelona { border-left-color: var(--barcelona); }
+  .flight-card.nyc { border-left-color: var(--nyc); }
+  .flight-card.tentative::after {
+    content: "tentative";
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 10px;
+    color: var(--ink-soft);
+    background: rgba(251, 246, 234, 0.9);
+    padding: 1px 8px;
+    border: 1px dashed var(--ink-soft);
+    border-radius: 2px;
+  }
+  .flight-date {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink-soft);
+    font-weight: 500;
+  }
+  .flight-route {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--ink);
+    margin-top: 2px;
+    letter-spacing: -0.01em;
+  }
+  .flight-airline {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin-top: 1px;
+  }
+  .flight-airline strong {
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .flight-times {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px dashed var(--rule);
+  }
+  .flight-duration {
+    font-size: 11px;
+    color: var(--ink-soft);
+    font-weight: 400;
+    margin-left: 4px;
+  }
+  .flight-conf {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    color: var(--ink-soft);
+    margin-top: 6px;
+    letter-spacing: 0.04em;
+  }
+  .flight-conf strong {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--phoenix);
+    letter-spacing: 0.08em;
+    font-style: italic;
+  }
+  .flight-card.portland .flight-conf strong { color: var(--portland); }
+  .flight-card.london .flight-conf strong { color: var(--london); }
+  .flight-card.barcelona .flight-conf strong { color: var(--barcelona); }
+  .flight-card.nyc .flight-conf strong { color: var(--nyc); }
+  .flight-note {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    font-style: italic;
+    color: var(--ink-soft);
+    margin-top: 4px;
+    line-height: 1.45;
+  }
+
   .addresses {
     margin-top: 32px;
     padding: 28px 32px;
@@ -430,7 +533,6 @@
     <div class="legend-item"><span class="swatch" style="background:var(--barcelona)"></span> Barcelona</div>
     <div class="legend-item"><span class="swatch" style="background:var(--nyc)"></span> New York City</div>
     <div class="legend-item"><span class="swatch travel"></span> Travel day ✈︎</div>
-    <div class="legend-item"><span class="swatch" style="background:linear-gradient(135deg,var(--portland) 0 50%,var(--phoenix) 50% 100%);outline:1.5px dashed var(--ink);outline-offset:-3px"></span> Tentative travel</div>
     <div class="legend-item"><span class="swatch" style="background:repeating-linear-gradient(45deg,#E8DFC8 0 4px,#FBF6EA 4px 8px);border:1px solid var(--rule)"></span> TBD (to be determined)</div>
   </div>
 
@@ -506,7 +608,7 @@
     <!-- AUGUST -->
     <div class="month">
       <div class="month-title"><span class="month-title-main">August</span> <span>2026</span></div>
-      <div class="month-sub">Portland · tentative return to Phoenix</div>
+      <div class="month-sub">Portland · home to Phoenix</div>
       <div class="cal">
         <div class="dow">S</div><div class="dow">M</div><div class="dow">T</div><div class="dow">W</div><div class="dow">T</div><div class="dow">F</div><div class="dow">S</div>
         <!-- August 2026 starts Sat -->
@@ -514,7 +616,7 @@
         <div class="day portland">1</div>
         <div class="day portland">2</div><div class="day portland">3</div><div class="day portland">4</div><div class="day portland">5</div><div class="day portland">6</div><div class="day portland">7</div><div class="day portland">8</div>
         <div class="day portland">9</div><div class="day portland">10</div><div class="day portland">11</div>
-        <div class="day travel tentative" style="--from-color:var(--portland);--to-color:var(--phoenix)">12<span class="plane">✈︎</span></div>
+        <div class="day travel" style="--from-color:var(--portland);--to-color:var(--phoenix)">12<span class="plane">✈︎</span></div>
         <div class="day phoenix">13</div><div class="day phoenix">14</div>
         <div class="day phoenix">15</div>
         <div class="day phoenix">16</div><div class="day phoenix">17</div><div class="day phoenix">18</div><div class="day phoenix">19</div><div class="day phoenix">20</div><div class="day phoenix">21</div><div class="day phoenix">22</div>
@@ -526,20 +628,91 @@
   </div>
 
   <div class="notes">
-    <h2>Key dates & travel days</h2>
-    <ul>
-      <li><span class="date-tag">May 12</span><span><strong>PHX → PDX</strong> · Southwest, evening. First Portland stretch begins.</span></li>
-      <li><span class="date-tag">May 28</span><span><strong>PDX → PHX</strong> · Home to Phoenix after two weeks in Portland.</span></li>
-      <li><span class="date-tag">June 2</span><span><strong>PHX → PDX</strong> · Back to Portland for two weeks.</span></li>
-      <li><span class="date-tag">June 16–17</span><span><strong>PDX → PHX → LHR</strong> · Land in Phoenix late on the 16th, fly to London the next evening.</span></li>
-      <li><span class="date-tag">June 18</span><span>Arrive London (3:05 PM local). Overnight there.</span></li>
-      <li><span class="date-tag">June 19</span><span><strong>LHR → BCN</strong> · Early flight to Barcelona. Summer in Spain begins.</span></li>
-      <li><span class="date-tag">July 17</span><span><strong>Classes end in Barcelona.</strong></span></li>
-      <li><span class="date-tag">July 18–27</span><span><em>Plans TBD</em> — somewhere in Europe before the flight out of Rome on July 28.</span></li>
-      <li><span class="date-tag">July 28</span><span><strong>FCO → JFK</strong> · Rome to NYC. Norse N0401, 7:05 PM → 10:30 PM. Overnight in NYC.</span></li>
-      <li><span class="date-tag">July 29</span><span><strong>JFK → PDX</strong> · NYC to Portland. Alaska 19, 5:08 PM → 8:33 PM. Conf: KCBAGE.</span></li>
-      <li><span class="date-tag">Aug 12 <em>(tentative)</em></span><span><strong>PDX → PHX</strong> · Home to Phoenix. Date may change.</span></li>
-    </ul>
+    <h2>Flight itinerary</h2>
+    <div class="flight-grid">
+
+      <div class="flight-card portland">
+        <div class="flight-date">Tue · May 12, 2026</div>
+        <div class="flight-route">PHX → PDX</div>
+        <div class="flight-airline"><strong>Southwest</strong> · WN 3855</div>
+        <div class="flight-times">8:20 PM → 11:00 PM</div>
+        <div class="flight-conf">Conf: <strong>AJWPN5</strong></div>
+        <div class="flight-note">First Portland stretch begins</div>
+      </div>
+
+      <div class="flight-card">
+        <div class="flight-date">Thu · May 28, 2026</div>
+        <div class="flight-route">PDX → PHX</div>
+        <div class="flight-airline"><strong>Southwest</strong></div>
+        <div class="flight-times">4:55 PM → <span class="flight-duration">arrival TBC</span></div>
+        <div class="flight-conf">Conf: <strong>C5WFBV</strong></div>
+        <div class="flight-note">Home to Phoenix after 2 weeks in Portland</div>
+      </div>
+
+      <div class="flight-card portland">
+        <div class="flight-date">Tue · Jun 2, 2026</div>
+        <div class="flight-route">PHX → PDX</div>
+        <div class="flight-airline"><strong>Southwest</strong></div>
+        <div class="flight-times">8:20 PM → 11:00 PM</div>
+        <div class="flight-conf">Conf: <strong>BRFEEK</strong></div>
+        <div class="flight-note">Back to Portland for 2 weeks</div>
+      </div>
+
+      <div class="flight-card">
+        <div class="flight-date">Tue · Jun 16, 2026</div>
+        <div class="flight-route">PDX → PHX</div>
+        <div class="flight-airline"><strong>Southwest</strong> · WN 1048</div>
+        <div class="flight-times">8:35 PM → 11:15 PM</div>
+        <div class="flight-conf">Conf: <strong>AKEM6D</strong></div>
+        <div class="flight-note">Layover night in Phoenix before Europe</div>
+      </div>
+
+      <div class="flight-card london">
+        <div class="flight-date">Wed · Jun 17, 2026</div>
+        <div class="flight-route">PHX → LHR</div>
+        <div class="flight-airline"><strong>American Airlines</strong></div>
+        <div class="flight-times">9:05 PM → 3:05 PM <span class="flight-duration">next day (London)</span></div>
+        <div class="flight-conf">Conf: <strong>YPUTIA</strong> · Ticket 0012304765256</div>
+        <div class="flight-note">Overnight in London · Allianz trip insurance included</div>
+      </div>
+
+      <div class="flight-card barcelona">
+        <div class="flight-date">Fri · Jun 19, 2026</div>
+        <div class="flight-route">LHR → BCN</div>
+        <div class="flight-airline"><strong>British Airways</strong></div>
+        <div class="flight-times">6:15 AM → 9:25 AM</div>
+        <div class="flight-conf">Conf: <strong>BDIURL</strong> · same booking as YPUTIA</div>
+        <div class="flight-note">Arrive Barcelona · Summer program starts Jun 22</div>
+      </div>
+
+      <div class="flight-card nyc">
+        <div class="flight-date">Tue · Jul 28, 2026</div>
+        <div class="flight-route">FCO → JFK</div>
+        <div class="flight-airline"><strong>Norse</strong> · N0401</div>
+        <div class="flight-times">7:05 PM → 10:30 PM <span class="flight-duration">9h 25m</span></div>
+        <div class="flight-conf">Conf: <strong>S8QUPG</strong></div>
+        <div class="flight-note">Overnight at Hampton Inn NY-JFK</div>
+      </div>
+
+      <div class="flight-card portland">
+        <div class="flight-date">Wed · Jul 29, 2026</div>
+        <div class="flight-route">JFK → PDX</div>
+        <div class="flight-airline"><strong>Alaska</strong> · AS 19</div>
+        <div class="flight-times">5:08 PM → 8:33 PM <span class="flight-duration">6h 25m</span></div>
+        <div class="flight-conf">Conf: <strong>KCBAGE</strong></div>
+        <div class="flight-note">Saver fare · nonstop · arrive Portland evening</div>
+      </div>
+
+      <div class="flight-card">
+        <div class="flight-date">Wed · Aug 12, 2026</div>
+        <div class="flight-route">PDX → PHX</div>
+        <div class="flight-airline"><strong>Southwest</strong></div>
+        <div class="flight-times">6:25 PM → 9:00 PM <span class="flight-duration">2h 35m</span></div>
+        <div class="flight-conf">Conf: <strong>COPGWJ</strong> · $93</div>
+        <div class="flight-note">Home to Phoenix · final leg of summer</div>
+      </div>
+
+    </div>
   </div>
 
   <div class="notes school">
