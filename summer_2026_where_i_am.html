@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Summer 2026 — Where I'll Be</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F6EEDC;
+    --paper: #FBF6EA;
+    --ink: #2A2118;
+    --ink-soft: #5A4A36;
+    --rule: #D9C9A8;
+    --phoenix: #C65D3A;
+    --portland: #3B5A47;
+    --london: #2C3E5C;
+    --barcelona: #E5A42B;
+    --orlando: #D75A6E;
+    --travel: #8B6F3F;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.55;
+    padding: 48px 32px 64px;
+    background-image:
+      radial-gradient(ellipse 800px 400px at 20% -10%, rgba(230, 164, 43, 0.08), transparent),
+      radial-gradient(ellipse 600px 400px at 90% 110%, rgba(198, 93, 58, 0.07), transparent);
+    min-height: 100vh;
+  }
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  header {
+    text-align: center;
+    margin-bottom: 56px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .eyebrow {
+    font-family: 'DM Sans', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.32em;
+    font-size: 11px;
+    color: var(--ink-soft);
+    margin-bottom: 16px;
+  }
+  h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: clamp(42px, 6vw, 72px);
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+  h1 em {
+    font-style: italic;
+    font-weight: 500;
+    color: var(--phoenix);
+  }
+  .subtitle {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--ink-soft);
+  }
+
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 20px;
+    margin: 40px 0 56px;
+    padding: 20px 24px;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+  }
+  .swatch {
+    width: 18px;
+    height: 18px;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+  .swatch.travel {
+    background: linear-gradient(135deg, var(--phoenix) 0 50%, var(--portland) 50% 100%);
+  }
+
+  .months-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 48px;
+  }
+  @media (max-width: 800px) {
+    .months-grid { grid-template-columns: 1fr; }
+  }
+
+  .month {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 28px 24px 24px;
+    box-shadow: 0 2px 0 rgba(0,0,0,0.02), 0 12px 32px -16px rgba(90, 74, 54, 0.15);
+  }
+  .month-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 32px;
+    letter-spacing: -0.01em;
+    margin-bottom: 4px;
+  }
+  .month-title-main {
+    font-style: normal;
+    font-weight: 900;
+  }
+  .month-sub {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--ink-soft);
+    margin-bottom: 18px;
+  }
+  .cal {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;
+  }
+  .dow {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    text-align: center;
+    color: var(--ink-soft);
+    padding: 4px 0 6px;
+    font-weight: 500;
+  }
+  .day {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 500;
+    border-radius: 3px;
+    color: var(--ink);
+    position: relative;
+  }
+  .day.empty { visibility: hidden; }
+  .day.phoenix { background: var(--phoenix); color: #FEF6EC; }
+  .day.portland { background: var(--portland); color: #F0F5EF; }
+  .day.london { background: var(--london); color: #F0F1F5; }
+  .day.barcelona { background: var(--barcelona); color: #2A2118; }
+  .day.orlando { background: var(--orlando); color: #FFF5F6; }
+  .day.travel {
+    background: linear-gradient(135deg, var(--from-color, var(--phoenix)) 0 50%, var(--to-color, var(--portland)) 50% 100%);
+    color: #FEF6EC;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.25);
+  }
+  .day.unknown {
+    background: repeating-linear-gradient(45deg, #E8DFC8 0 4px, #FBF6EA 4px 8px);
+    color: var(--ink-soft);
+  }
+  .day .plane {
+    position: absolute;
+    top: 2px;
+    right: 3px;
+    font-size: 9px;
+    opacity: 0.9;
+  }
+
+  .notes {
+    margin-top: 56px;
+    padding: 28px 32px;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+  }
+  .notes h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+  .notes ul { list-style: none; }
+  .notes li {
+    padding: 10px 0;
+    border-bottom: 1px dashed var(--rule);
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .notes li:last-child { border-bottom: none; }
+  .notes .date-tag {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 14px;
+    min-width: 90px;
+    color: var(--phoenix);
+  }
+
+  footer {
+    margin-top: 48px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--ink-soft);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  footer em {
+    font-family: 'Fraunces', serif;
+    text-transform: none;
+    letter-spacing: normal;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink);
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <div class="eyebrow">A travel dispatch · 2026</div>
+    <h1>Where I'll be this <em>summer</em></h1>
+    <div class="subtitle">May — August, at a glance</div>
+  </header>
+
+  <div class="legend">
+    <div class="legend-item"><span class="swatch" style="background:var(--phoenix)"></span> Phoenix (home)</div>
+    <div class="legend-item"><span class="swatch" style="background:var(--portland)"></span> Portland</div>
+    <div class="legend-item"><span class="swatch" style="background:var(--london)"></span> London</div>
+    <div class="legend-item"><span class="swatch" style="background:var(--barcelona)"></span> Barcelona</div>
+    <div class="legend-item"><span class="swatch" style="background:var(--orlando)"></span> Orlando</div>
+    <div class="legend-item"><span class="swatch travel"></span> Travel day ✈︎</div>
+  </div>
+
+  <div class="months-grid">
+
+    <!-- MAY -->
+    <div class="month">
+      <div class="month-title"><span class="month-title-main">May</span> <span>2026</span></div>
+      <div class="month-sub">Portland stretch · one trip home</div>
+      <div class="cal">
+        <div class="dow">S</div><div class="dow">M</div><div class="dow">T</div><div class="dow">W</div><div class="dow">T</div><div class="dow">F</div><div class="dow">S</div>
+        <!-- May 2026 starts Fri -->
+        <div class="day empty"></div><div class="day empty"></div><div class="day empty"></div><div class="day empty"></div><div class="day empty"></div>
+        <div class="day phoenix">1</div><div class="day phoenix">2</div>
+        <div class="day phoenix">3</div><div class="day phoenix">4</div><div class="day phoenix">5</div><div class="day phoenix">6</div><div class="day phoenix">7</div><div class="day phoenix">8</div><div class="day phoenix">9</div>
+        <div class="day phoenix">10</div><div class="day phoenix">11</div>
+        <div class="day travel" style="--from-color:var(--phoenix);--to-color:var(--portland)">12<span class="plane">✈︎</span></div>
+        <div class="day portland">13</div><div class="day portland">14</div><div class="day portland">15</div><div class="day portland">16</div>
+        <div class="day portland">17</div><div class="day portland">18</div><div class="day portland">19</div><div class="day portland">20</div><div class="day portland">21</div><div class="day portland">22</div>
+        <div class="day portland">23</div>
+        <div class="day portland">24</div><div class="day portland">25</div>
+        <div class="day portland">26</div>
+        <div class="day portland">27</div>
+        <div class="day travel" style="--from-color:var(--portland);--to-color:var(--phoenix)">28<span class="plane">✈︎</span></div>
+        <div class="day phoenix">29</div><div class="day phoenix">30</div>
+        <div class="day phoenix">31</div>
+      </div>
+    </div>
+
+    <!-- JUNE -->
+    <div class="month">
+      <div class="month-title"><span class="month-title-main">June</span> <span>2026</span></div>
+      <div class="month-sub">Portland, then across the Atlantic</div>
+      <div class="cal">
+        <div class="dow">S</div><div class="dow">M</div><div class="dow">T</div><div class="dow">W</div><div class="dow">T</div><div class="dow">F</div><div class="dow">S</div>
+        <!-- June 2026 starts Mon -->
+        <div class="day empty"></div>
+        <div class="day phoenix">1</div>
+        <div class="day travel" style="--from-color:var(--phoenix);--to-color:var(--portland)">2<span class="plane">✈︎</span></div>
+        <div class="day portland">3</div><div class="day portland">4</div><div class="day portland">5</div><div class="day portland">6</div>
+        <div class="day portland">7</div><div class="day portland">8</div><div class="day portland">9</div><div class="day portland">10</div><div class="day portland">11</div><div class="day portland">12</div><div class="day portland">13</div>
+        <div class="day portland">14</div><div class="day portland">15</div>
+        <div class="day travel" style="--from-color:var(--portland);--to-color:var(--phoenix)">16<span class="plane">✈︎</span></div>
+        <div class="day travel" style="--from-color:var(--phoenix);--to-color:var(--london)">17<span class="plane">✈︎</span></div>
+        <div class="day london">18</div>
+        <div class="day travel" style="--from-color:var(--london);--to-color:var(--barcelona)">19<span class="plane">✈︎</span></div>
+        <div class="day barcelona">20</div>
+        <div class="day barcelona">21</div><div class="day barcelona">22</div><div class="day barcelona">23</div><div class="day barcelona">24</div><div class="day barcelona">25</div><div class="day barcelona">26</div><div class="day barcelona">27</div>
+        <div class="day barcelona">28</div><div class="day barcelona">29</div><div class="day barcelona">30</div>
+      </div>
+    </div>
+
+    <!-- JULY -->
+    <div class="month">
+      <div class="month-title"><span class="month-title-main">July</span> <span>2026</span></div>
+      <div class="month-sub">Europe · Orlando · Portland</div>
+      <div class="cal">
+        <div class="dow">S</div><div class="dow">M</div><div class="dow">T</div><div class="dow">W</div><div class="dow">T</div><div class="dow">F</div><div class="dow">S</div>
+        <!-- July 2026 starts Wed -->
+        <div class="day empty"></div><div class="day empty"></div><div class="day empty"></div>
+        <div class="day barcelona">1</div><div class="day barcelona">2</div><div class="day barcelona">3</div><div class="day barcelona">4</div>
+        <div class="day barcelona">5</div><div class="day barcelona">6</div><div class="day barcelona">7</div><div class="day barcelona">8</div><div class="day barcelona">9</div><div class="day barcelona">10</div><div class="day barcelona">11</div>
+        <div class="day barcelona">12</div><div class="day barcelona">13</div><div class="day barcelona">14</div><div class="day barcelona">15</div><div class="day barcelona">16</div><div class="day barcelona">17</div><div class="day barcelona">18</div>
+        <div class="day barcelona">19</div><div class="day barcelona">20</div><div class="day barcelona">21</div><div class="day barcelona">22</div><div class="day barcelona">23</div><div class="day barcelona">24</div><div class="day barcelona">25</div>
+        <div class="day barcelona">26</div>
+        <div class="day travel" style="--from-color:var(--london);--to-color:var(--orlando)">27<span class="plane">✈︎</span></div>
+        <div class="day travel" style="--from-color:var(--orlando);--to-color:var(--portland)">28<span class="plane">✈︎</span></div>
+        <div class="day portland">29</div><div class="day portland">30</div><div class="day portland">31</div>
+      </div>
+    </div>
+
+    <!-- AUGUST -->
+    <div class="month">
+      <div class="month-title"><span class="month-title-main">August</span> <span>2026</span></div>
+      <div class="month-sub">Portland · home to Phoenix</div>
+      <div class="cal">
+        <div class="dow">S</div><div class="dow">M</div><div class="dow">T</div><div class="dow">W</div><div class="dow">T</div><div class="dow">F</div><div class="dow">S</div>
+        <!-- August 2026 starts Sat -->
+        <div class="day empty"></div><div class="day empty"></div><div class="day empty"></div><div class="day empty"></div><div class="day empty"></div><div class="day empty"></div>
+        <div class="day portland">1</div>
+        <div class="day portland">2</div><div class="day portland">3</div><div class="day portland">4</div><div class="day portland">5</div><div class="day portland">6</div><div class="day portland">7</div><div class="day portland">8</div>
+        <div class="day portland">9</div><div class="day portland">10</div><div class="day portland">11</div><div class="day portland">12</div><div class="day portland">13</div><div class="day portland">14</div>
+        <div class="day travel" style="--from-color:var(--portland);--to-color:var(--phoenix)">15<span class="plane">✈︎</span></div>
+        <div class="day phoenix">16</div><div class="day phoenix">17</div><div class="day phoenix">18</div><div class="day phoenix">19</div><div class="day phoenix">20</div><div class="day phoenix">21</div><div class="day phoenix">22</div>
+        <div class="day phoenix">23</div><div class="day phoenix">24</div><div class="day phoenix">25</div><div class="day phoenix">26</div><div class="day phoenix">27</div><div class="day phoenix">28</div><div class="day phoenix">29</div>
+        <div class="day phoenix">30</div><div class="day phoenix">31</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="notes">
+    <h2>Key dates & travel days</h2>
+    <ul>
+      <li><span class="date-tag">May 12</span><span><strong>PHX → PDX</strong> · Southwest, evening. First Portland stretch begins.</span></li>
+      <li><span class="date-tag">May 28</span><span><strong>PDX → PHX</strong> · Home to Phoenix after two weeks in Portland.</span></li>
+      <li><span class="date-tag">June 2</span><span><strong>PHX → PDX</strong> · Back to Portland for two weeks.</span></li>
+      <li><span class="date-tag">June 16–17</span><span><strong>PDX → PHX → LHR</strong> · Land in Phoenix late on the 16th, fly to London the next evening.</span></li>
+      <li><span class="date-tag">June 18</span><span>Arrive London (3:05 PM local). Overnight there.</span></li>
+      <li><span class="date-tag">June 19</span><span><strong>LHR → BCN</strong> · Early flight to Barcelona. Summer in Spain begins.</span></li>
+      <li><span class="date-tag">July 27</span><span><strong>LHR → MCO</strong> · London to Orlando.</span></li>
+      <li><span class="date-tag">July 28</span><span><strong>MCO → PDX</strong> · Orlando to Portland next morning.</span></li>
+      <li><span class="date-tag">Aug 15</span><span><strong>PDX → PHX</strong> · Home to Phoenix for good.</span></li>
+    </ul>
+  </div>
+
+  <footer>
+    <em>Made with care · best way to reach me is by phone or text</em>
+  </footer>
+
+</div>
+</body>
+</html>
