@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -18,7 +17,7 @@
     --portland: #3B5A47;
     --london: #2C3E5C;
     --barcelona: #E5A42B;
-    --orlando: #D75A6E;
+    --nyc: #6B2A3D;
     --travel: #8B6F3F;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -162,7 +161,7 @@
   .day.portland { background: var(--portland); color: #F0F5EF; }
   .day.london { background: var(--london); color: #F0F1F5; }
   .day.barcelona { background: var(--barcelona); color: #2A2118; }
-  .day.orlando { background: var(--orlando); color: #FFF5F6; }
+  .day.nyc { background: var(--nyc); color: #FBF0F2; }
   .day.travel {
     background: linear-gradient(135deg, var(--from-color, var(--phoenix)) 0 50%, var(--to-color, var(--portland)) 50% 100%);
     color: #FEF6EC;
@@ -243,7 +242,7 @@
     <div class="legend-item"><span class="swatch" style="background:var(--portland)"></span> Portland</div>
     <div class="legend-item"><span class="swatch" style="background:var(--london)"></span> Londres</div>
     <div class="legend-item"><span class="swatch" style="background:var(--barcelona)"></span> Barcelona</div>
-    <div class="legend-item"><span class="swatch" style="background:var(--orlando)"></span> Orlando</div>
+    <div class="legend-item"><span class="swatch" style="background:var(--nyc)"></span> Nueva York</div>
     <div class="legend-item"><span class="swatch travel"></span> Día de viaje ✈︎</div>
     <div class="legend-item"><span class="swatch" style="background:repeating-linear-gradient(45deg,#E8DFC8 0 4px,#FBF6EA 4px 8px);border:1px solid var(--rule)"></span> Por confirmar</div>
   </div>
@@ -300,7 +299,7 @@
     <!-- JULIO -->
     <div class="month">
       <div class="month-title"><span class="month-title-main">Julio</span> <span>2026</span></div>
-      <div class="month-sub">Europa · Orlando · Portland</div>
+      <div class="month-sub">Europa · Nueva York · Portland</div>
       <div class="cal">
         <div class="dow">D</div><div class="dow">L</div><div class="dow">M</div><div class="dow">X</div><div class="dow">J</div><div class="dow">V</div><div class="dow">S</div>
         <!-- Julio 2026 empieza miércoles -->
@@ -310,9 +309,10 @@
         <div class="day barcelona">12</div><div class="day barcelona">13</div><div class="day barcelona">14</div><div class="day barcelona">15</div><div class="day barcelona">16</div><div class="day barcelona">17</div><div class="day unknown">18</div>
         <div class="day unknown">19</div><div class="day unknown">20</div><div class="day unknown">21</div><div class="day unknown">22</div><div class="day unknown">23</div><div class="day unknown">24</div><div class="day unknown">25</div>
         <div class="day unknown">26</div>
-        <div class="day travel" style="--from-color:var(--london);--to-color:var(--orlando)">27<span class="plane">✈︎</span></div>
-        <div class="day travel" style="--from-color:var(--orlando);--to-color:var(--portland)">28<span class="plane">✈︎</span></div>
-        <div class="day portland">29</div><div class="day portland">30</div><div class="day portland">31</div>
+        <div class="day unknown">27</div>
+        <div class="day travel" style="--from-color:var(--barcelona);--to-color:var(--nyc)">28<span class="plane">✈︎</span></div>
+        <div class="day travel" style="--from-color:var(--nyc);--to-color:var(--portland)">29<span class="plane">✈︎</span></div>
+        <div class="day portland">30</div><div class="day portland">31</div>
       </div>
     </div>
 
@@ -346,9 +346,9 @@
       <li><span class="date-tag">18 de junio</span><span>Llegada a Londres (15:05 hora local). Una noche allí.</span></li>
       <li><span class="date-tag">19 de junio</span><span><strong>LHR → BCN</strong> · Vuelo temprano a Barcelona. Empieza el verano en España.</span></li>
       <li><span class="date-tag">17 de julio</span><span><strong>Terminan las clases en Barcelona.</strong></span></li>
-      <li><span class="date-tag">18–26 de julio</span><span><em>Planes por confirmar</em> — todavía decidiendo qué hacer entre el fin de clases y el vuelo a Orlando.</span></li>
-      <li><span class="date-tag">27 de julio</span><span><strong>LHR → MCO</strong> · De Londres a Orlando.</span></li>
-      <li><span class="date-tag">28 de julio</span><span><strong>MCO → PDX</strong> · De Orlando a Portland al día siguiente.</span></li>
+      <li><span class="date-tag">18–27 de julio</span><span><em>Planes por confirmar</em> — en algún lugar de Europa antes del vuelo desde Roma el 28 de julio.</span></li>
+      <li><span class="date-tag">28 de julio</span><span><strong>FCO → JFK</strong> · De Roma a Nueva York. Norse N0401, 7:05 PM → 10:30 PM. Noche en NYC.</span></li>
+      <li><span class="date-tag">29 de julio</span><span><strong>JFK → PDX</strong> · De Nueva York a Portland. Alaska 19, 5:08 PM → 8:33 PM. Conf: KCBAGE.</span></li>
       <li><span class="date-tag">15 de agosto</span><span><strong>PDX → PHX</strong> · Vuelta definitiva a Phoenix.</span></li>
     </ul>
   </div>
