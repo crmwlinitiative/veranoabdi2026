@@ -213,6 +213,188 @@
     min-width: 90px;
     color: var(--phoenix);
   }
+  .notes.school .date-tag { color: var(--barcelona); }
+  .notes .school-intro {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin-bottom: 18px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .school-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 18px;
+  }
+  @media (max-width: 720px) {
+    .school-grid { grid-template-columns: 1fr; }
+  }
+  .school-card {
+    background: rgba(229, 164, 43, 0.07);
+    border: 1px solid var(--rule);
+    border-left: 4px solid var(--barcelona);
+    border-radius: 3px;
+    padding: 18px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .school-card.internship {
+    border-left-color: var(--phoenix);
+    background: rgba(198, 93, 58, 0.06);
+    grid-column: 1 / -1;
+  }
+  .school-card.sotomayor {
+    border-left-color: var(--london);
+    background: rgba(44, 62, 92, 0.05);
+  }
+  .school-week-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--ink-soft);
+  }
+  .school-week-dates {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--barcelona);
+    margin-top: -4px;
+  }
+  .school-card.internship .school-week-dates { color: var(--phoenix); }
+  .school-card.sotomayor .school-week-dates { color: var(--london); }
+  .school-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 17px;
+    line-height: 1.25;
+    color: var(--ink);
+    margin-top: 2px;
+  }
+  .school-instructors {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    font-style: italic;
+  }
+  .school-schedule {
+    margin-top: 4px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--rule);
+  }
+  .schedule-row {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 3px 0;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+  }
+  .schedule-row .day-label {
+    min-width: 110px;
+    font-weight: 500;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 11px;
+  }
+  .schedule-row .time-val {
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .school-note {
+    margin-top: 6px;
+    padding: 8px 12px;
+    background: rgba(217, 201, 168, 0.3);
+    border-radius: 3px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    color: var(--ink);
+    font-style: italic;
+  }
+  .school-note strong { font-style: normal; font-weight: 700; }
+  .school-extra {
+    margin-top: 4px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--rule);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+  .school-extra-label {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 12px;
+    color: var(--barcelona);
+    margin-bottom: 2px;
+  }
+
+  .addresses {
+    margin-top: 32px;
+    padding: 28px 32px;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+  }
+  .addresses h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 24px;
+    margin-bottom: 18px;
+  }
+  .addr-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px 24px;
+  }
+  @media (max-width: 700px) {
+    .addr-grid { grid-template-columns: 1fr; }
+  }
+  .addr-block {
+    padding: 14px 18px;
+    border-left: 3px solid var(--phoenix);
+    background: rgba(217, 201, 168, 0.18);
+    border-radius: 0 3px 3px 0;
+  }
+  .addr-block.barcelona { border-left-color: var(--barcelona); }
+  .addr-block.london { border-left-color: var(--london); }
+  .addr-block.nyc { border-left-color: var(--nyc); }
+  .addr-label {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--ink);
+    margin-bottom: 3px;
+  }
+  .addr-dates {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--ink-soft);
+    margin-bottom: 8px;
+  }
+  .addr-text {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+  .addr-text em {
+    display: block;
+    margin-top: 4px;
+    font-size: 12px;
+    color: var(--ink-soft);
+  }
 
   footer {
     margin-top: 48px;
@@ -358,6 +540,110 @@
       <li><span class="date-tag">July 29</span><span><strong>JFK → PDX</strong> · NYC to Portland. Alaska 19, 5:08 PM → 8:33 PM. Conf: KCBAGE.</span></li>
       <li><span class="date-tag">Aug 12 <em>(tentative)</em></span><span><strong>PDX → PHX</strong> · Home to Phoenix. Date may change.</span></li>
     </ul>
+  </div>
+
+  <div class="notes school">
+    <h2>Barcelona school schedule</h2>
+    <p class="school-intro">UPR School of Law · Barcelona Summer Program · hosted at the Facultat de Dret, Universitat de Barcelona · June 22 – July 17, 2026</p>
+    <div class="school-grid">
+
+      <div class="school-card">
+        <div class="school-week-label">Week 1</div>
+        <div class="school-week-dates">June 22 – 26</div>
+        <div class="school-title">Climate Change &amp; State Obligations under International Law</div>
+        <div class="school-instructors">Dra. Mar Campins Eritja · Prof. Luis E. Rodríguez Rivera</div>
+        <div class="school-schedule">
+          <div class="schedule-row"><span class="day-label">Mon</span><span class="time-val">11:15 AM – 2:15 PM</span></div>
+          <div class="schedule-row"><span class="day-label">Tue · Thu · Fri</span><span class="time-val">9:00 AM – 1:00 PM</span></div>
+        </div>
+        <div class="school-note"><strong>Wed Jun 24</strong> — holiday, no class</div>
+        <div class="school-extra">
+          <div class="school-extra-label">+ Opening lecture</div>
+          <strong>EU Law &amp; Institutions</strong> · Dr. Xavier Pons Rafols<br>Mon Jun 22 · 9:00 – 11:00 AM
+        </div>
+      </div>
+
+      <div class="school-card">
+        <div class="school-week-label">Week 2</div>
+        <div class="school-week-dates">June 29 – July 3</div>
+        <div class="school-title">International Protection of Human Rights: Principles, Institutions &amp; Challenges</div>
+        <div class="school-instructors">Dra. Helena Torroja Mateu · Universitat de Barcelona</div>
+        <div class="school-schedule">
+          <div class="schedule-row"><span class="day-label">Mon – Fri</span><span class="time-val">10:00 AM – 1:00 PM</span></div>
+        </div>
+        <div class="school-extra">
+          <div class="school-extra-label">+ Lecture</div>
+          <strong>Spanish Justice System</strong> · Dra. Nuria Mallandrich Miret<br>Tue Jun 30 · 5:00 – 7:00 PM
+        </div>
+      </div>
+
+      <div class="school-card sotomayor">
+        <div class="school-week-label">Week 3</div>
+        <div class="school-week-dates">July 6 – 10</div>
+        <div class="school-title">Lawyers and Litigants in Landmarks</div>
+        <div class="school-instructors">Hon. Sonia Sotomayor · U.S. Supreme Court<br>Prof. Gerard Magliocca · Indiana University</div>
+        <div class="school-schedule">
+          <div class="schedule-row"><span class="day-label">Mon – Fri</span><span class="time-val">9:00 AM – 12:30 PM</span></div>
+        </div>
+        <div class="school-note"><strong>No internship this week</strong> — intensive course only</div>
+      </div>
+
+      <div class="school-card">
+        <div class="school-week-label">Week 4</div>
+        <div class="school-week-dates">July 13 – 17</div>
+        <div class="school-title">Victims' &amp; Defendants' Rights in Criminal Process: Evidence with Vulnerable Witnesses</div>
+        <div class="school-instructors">Dra. Nuria Mallandrich Miret · Universitat de Barcelona</div>
+        <div class="school-schedule">
+          <div class="schedule-row"><span class="day-label">Mon – Fri</span><span class="time-val">10:00 AM – 1:00 PM</span></div>
+        </div>
+        <div class="school-note"><strong>Classes end Jul 17</strong> — program closing</div>
+      </div>
+
+      <div class="school-card internship">
+        <div class="school-week-label">Internship · Pasantía</div>
+        <div class="school-week-dates">June 22 – July 17 · CROMA Legal</div>
+        <div class="school-title">La Práctica del Derecho en Europa</div>
+        <div class="school-instructors">Supervised by Dr. Efrén Rivera Ramos · Humanist of the Year 2023, former Dean UPR School of Law · Practice area: Intellectual property, trademarks, cultural &amp; entertainment industries, technology &amp; advertising law</div>
+        <div class="school-schedule">
+          <div class="schedule-row"><span class="day-label">Mon · Wed</span><span class="time-val">9:00 AM – 2:00 PM &nbsp;&amp;&nbsp; 4:00 – 7:00 PM</span></div>
+          <div class="schedule-row"><span class="day-label">Tue · Thu · Fri</span><span class="time-val">9:00 AM – 2:00 PM</span></div>
+          <div class="schedule-row"><span class="day-label">Thu · Seminar</span><span class="time-val">5:00 – 7:30 PM</span></div>
+        </div>
+        <div class="school-note"><strong>Jul 6 – 10</strong> — no internship during Justice Sotomayor's course</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="addresses">
+    <h2>Addresses & locations</h2>
+    <div class="addr-grid">
+      <div class="addr-block">
+        <div class="addr-label">Portland · first part of summer</div>
+        <div class="addr-dates">May 12 – June 16</div>
+        <div class="addr-text">1421 Southwest 12th Avenue<br>Portland, OR 97201</div>
+      </div>
+      <div class="addr-block barcelona">
+        <div class="addr-label">Barcelona · stay</div>
+        <div class="addr-dates">June 19 – July 27</div>
+        <div class="addr-text">Carrer de Sardenya, 51<br>Sant Martí, 08005 Barcelona, Spain</div>
+      </div>
+      <div class="addr-block nyc">
+        <div class="addr-label">Hampton Inn NY-JFK · overnight</div>
+        <div class="addr-dates">Jul 28 (3 PM) – Jul 29 (12 PM)</div>
+        <div class="addr-text">144-10 135th Avenue<br>Jamaica, NY 11436, USA<em>2 mi from JFK · free shuttle · conf: 88322609 · +1 718-322-7500</em></div>
+      </div>
+      <div class="addr-block barcelona">
+        <div class="addr-label">Barcelona · law school</div>
+        <div class="addr-dates">classes June 22 – July 17</div>
+        <div class="addr-text">Facultat de Dret · Universitat de Barcelona<br>Av. Diagonal, 684 · Les Corts<br>08034 Barcelona, Spain<em>Classroom: Planta 0, Bloc D, Aula D001 · Conference room: Edifici Principal, Saló de Graus</em></div>
+      </div>
+      <div class="addr-block barcelona">
+        <div class="addr-label">LLDM Church</div>
+        <div class="addr-dates">5 minutes from stay</div>
+        <div class="addr-text">Carrer dels Almogàvers, 68, 70<br>Sant Martí, 08018 Barcelona, Spain</div>
+      </div>
+    </div>
   </div>
 
   <footer>
