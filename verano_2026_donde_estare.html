@@ -167,6 +167,10 @@
     color: #FEF6EC;
     text-shadow: 0 1px 2px rgba(0,0,0,0.25);
   }
+  .day.tentative {
+    outline: 1.5px dashed var(--ink);
+    outline-offset: -3px;
+  }
   .day.unknown {
     background: repeating-linear-gradient(45deg, #E8DFC8 0 4px, #FBF6EA 4px 8px);
     color: var(--ink-soft);
@@ -244,6 +248,7 @@
     <div class="legend-item"><span class="swatch" style="background:var(--barcelona)"></span> Barcelona</div>
     <div class="legend-item"><span class="swatch" style="background:var(--nyc)"></span> Nueva York</div>
     <div class="legend-item"><span class="swatch travel"></span> Día de viaje ✈︎</div>
+    <div class="legend-item"><span class="swatch" style="background:linear-gradient(135deg,var(--portland) 0 50%,var(--phoenix) 50% 100%);outline:1.5px dashed var(--ink);outline-offset:-3px"></span> Viaje tentativo</div>
     <div class="legend-item"><span class="swatch" style="background:repeating-linear-gradient(45deg,#E8DFC8 0 4px,#FBF6EA 4px 8px);border:1px solid var(--rule)"></span> Por confirmar</div>
   </div>
 
@@ -319,15 +324,17 @@
     <!-- AGOSTO -->
     <div class="month">
       <div class="month-title"><span class="month-title-main">Agosto</span> <span>2026</span></div>
-      <div class="month-sub">Portland · regreso a Phoenix</div>
+      <div class="month-sub">Portland · regreso tentativo a Phoenix</div>
       <div class="cal">
         <div class="dow">D</div><div class="dow">L</div><div class="dow">M</div><div class="dow">X</div><div class="dow">J</div><div class="dow">V</div><div class="dow">S</div>
         <!-- Agosto 2026 empieza sábado -->
         <div class="day empty"></div><div class="day empty"></div><div class="day empty"></div><div class="day empty"></div><div class="day empty"></div><div class="day empty"></div>
         <div class="day portland">1</div>
         <div class="day portland">2</div><div class="day portland">3</div><div class="day portland">4</div><div class="day portland">5</div><div class="day portland">6</div><div class="day portland">7</div><div class="day portland">8</div>
-        <div class="day portland">9</div><div class="day portland">10</div><div class="day portland">11</div><div class="day portland">12</div><div class="day portland">13</div><div class="day portland">14</div>
-        <div class="day travel" style="--from-color:var(--portland);--to-color:var(--phoenix)">15<span class="plane">✈︎</span></div>
+        <div class="day portland">9</div><div class="day portland">10</div><div class="day portland">11</div>
+        <div class="day travel tentative" style="--from-color:var(--portland);--to-color:var(--phoenix)">12<span class="plane">✈︎</span></div>
+        <div class="day phoenix">13</div><div class="day phoenix">14</div>
+        <div class="day phoenix">15</div>
         <div class="day phoenix">16</div><div class="day phoenix">17</div><div class="day phoenix">18</div><div class="day phoenix">19</div><div class="day phoenix">20</div><div class="day phoenix">21</div><div class="day phoenix">22</div>
         <div class="day phoenix">23</div><div class="day phoenix">24</div><div class="day phoenix">25</div><div class="day phoenix">26</div><div class="day phoenix">27</div><div class="day phoenix">28</div><div class="day phoenix">29</div>
         <div class="day phoenix">30</div><div class="day phoenix">31</div>
@@ -349,7 +356,7 @@
       <li><span class="date-tag">18–27 de julio</span><span><em>Planes por confirmar</em> — en algún lugar de Europa antes del vuelo desde Roma el 28 de julio.</span></li>
       <li><span class="date-tag">28 de julio</span><span><strong>FCO → JFK</strong> · De Roma a Nueva York. Norse N0401, 7:05 PM → 10:30 PM. Noche en NYC.</span></li>
       <li><span class="date-tag">29 de julio</span><span><strong>JFK → PDX</strong> · De Nueva York a Portland. Alaska 19, 5:08 PM → 8:33 PM. Conf: KCBAGE.</span></li>
-      <li><span class="date-tag">15 de agosto</span><span><strong>PDX → PHX</strong> · Vuelta definitiva a Phoenix.</span></li>
+      <li><span class="date-tag">12 de agosto <em>(tentativo)</em></span><span><strong>PDX → PHX</strong> · Vuelta a Phoenix. La fecha puede cambiar.</span></li>
     </ul>
   </div>
 
