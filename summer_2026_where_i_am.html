@@ -18,6 +18,10 @@
     --london: #2C3E5C;
     --barcelona: #E5A42B;
     --nyc: #6B2A3D;
+    --madrid: #B8860B;
+    --paris: #5B7FA8;
+    --florence: #7C5A3C;
+    --rome: #8B3A2E;
     --travel: #8B6F3F;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -162,6 +166,10 @@
   .day.london { background: var(--london); color: #F0F1F5; }
   .day.barcelona { background: var(--barcelona); color: #2A2118; }
   .day.nyc { background: var(--nyc); color: #FBF0F2; }
+  .day.madrid { background: var(--madrid); color: #FEF6EC; }
+  .day.paris { background: var(--paris); color: #F0F4FA; }
+  .day.florence { background: var(--florence); color: #F5EFE6; }
+  .day.rome { background: var(--rome); color: #FEF0EC; }
   .day.travel {
     background: linear-gradient(135deg, var(--from-color, var(--phoenix)) 0 50%, var(--to-color, var(--portland)) 50% 100%);
     color: #FEF6EC;
@@ -440,6 +448,91 @@
     line-height: 1.45;
   }
 
+  .trip-intro {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin-bottom: 18px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .trip-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 14px;
+  }
+  .trip-card {
+    background: rgba(217, 201, 168, 0.18);
+    border: 1px solid var(--rule);
+    border-top: 4px solid var(--phoenix);
+    border-radius: 3px;
+    padding: 14px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .trip-card.madrid { border-top-color: var(--madrid); }
+  .trip-card.paris { border-top-color: var(--paris); }
+  .trip-card.florence { border-top-color: var(--florence); }
+  .trip-card.rome { border-top-color: var(--rome); }
+  .trip-card.nyc { border-top-color: var(--nyc); }
+  .trip-city {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-size: 22px;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .trip-country {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-top: 2px;
+  }
+  .trip-nights {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink);
+    font-weight: 700;
+    margin-top: 8px;
+    padding: 3px 8px;
+    background: rgba(229, 164, 43, 0.2);
+    border-radius: 2px;
+    align-self: flex-start;
+  }
+  .trip-card.madrid .trip-nights { background: rgba(184, 134, 11, 0.2); }
+  .trip-card.paris .trip-nights { background: rgba(91, 127, 168, 0.2); }
+  .trip-card.florence .trip-nights { background: rgba(124, 90, 60, 0.2); }
+  .trip-card.rome .trip-nights { background: rgba(139, 58, 46, 0.2); }
+  .trip-card.nyc .trip-nights { background: rgba(107, 42, 61, 0.2); }
+  .trip-dates {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin-top: 6px;
+  }
+  .trip-hotel {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px dashed var(--rule);
+    line-height: 1.4;
+  }
+  .trip-hotel-room {
+    font-size: 11px;
+    color: var(--ink-soft);
+    font-style: italic;
+    margin-top: 2px;
+  }
+
   .addresses {
     margin-top: 32px;
     padding: 28px 32px;
@@ -531,6 +624,10 @@
     <div class="legend-item"><span class="swatch" style="background:var(--portland)"></span> Portland</div>
     <div class="legend-item"><span class="swatch" style="background:var(--london)"></span> London</div>
     <div class="legend-item"><span class="swatch" style="background:var(--barcelona)"></span> Barcelona</div>
+    <div class="legend-item"><span class="swatch" style="background:var(--madrid)"></span> Madrid</div>
+    <div class="legend-item"><span class="swatch" style="background:var(--paris)"></span> Paris</div>
+    <div class="legend-item"><span class="swatch" style="background:var(--florence)"></span> Florence</div>
+    <div class="legend-item"><span class="swatch" style="background:var(--rome)"></span> Rome</div>
     <div class="legend-item"><span class="swatch" style="background:var(--nyc)"></span> New York City</div>
     <div class="legend-item"><span class="swatch travel"></span> Travel day ✈︎</div>
     <div class="legend-item"><span class="swatch" style="background:repeating-linear-gradient(45deg,#E8DFC8 0 4px,#FBF6EA 4px 8px);border:1px solid var(--rule)"></span> TBD (to be determined)</div>
@@ -588,17 +685,17 @@
     <!-- JULY -->
     <div class="month">
       <div class="month-title"><span class="month-title-main">July</span> <span>2026</span></div>
-      <div class="month-sub">Europe · NYC · Portland</div>
+      <div class="month-sub">Barcelona · Europe tour · NYC · Portland</div>
       <div class="cal">
         <div class="dow">S</div><div class="dow">M</div><div class="dow">T</div><div class="dow">W</div><div class="dow">T</div><div class="dow">F</div><div class="dow">S</div>
         <!-- July 2026 starts Wed -->
         <div class="day empty"></div><div class="day empty"></div><div class="day empty"></div>
         <div class="day barcelona">1</div><div class="day barcelona">2</div><div class="day barcelona">3</div><div class="day barcelona">4</div>
         <div class="day barcelona">5</div><div class="day barcelona">6</div><div class="day barcelona">7</div><div class="day barcelona">8</div><div class="day barcelona">9</div><div class="day barcelona">10</div><div class="day barcelona">11</div>
-        <div class="day barcelona">12</div><div class="day barcelona">13</div><div class="day barcelona">14</div><div class="day barcelona">15</div><div class="day barcelona">16</div><div class="day barcelona">17</div><div class="day unknown">18</div>
-        <div class="day unknown">19</div><div class="day unknown">20</div><div class="day unknown">21</div><div class="day unknown">22</div><div class="day unknown">23</div><div class="day unknown">24</div><div class="day unknown">25</div>
-        <div class="day unknown">26</div>
-        <div class="day unknown">27</div>
+        <div class="day barcelona">12</div><div class="day barcelona">13</div><div class="day barcelona">14</div><div class="day barcelona">15</div><div class="day barcelona">16</div><div class="day barcelona">17</div><div class="day barcelona">18</div>
+        <div class="day travel" style="--from-color:var(--barcelona);--to-color:var(--madrid)">19<span class="plane">✈︎</span></div><div class="day madrid">20</div><div class="day travel" style="--from-color:var(--madrid);--to-color:var(--paris)">21<span class="plane">✈︎</span></div><div class="day paris">22</div><div class="day travel" style="--from-color:var(--paris);--to-color:var(--florence)">23<span class="plane">✈︎</span></div><div class="day florence">24</div><div class="day travel" style="--from-color:var(--florence);--to-color:var(--rome)">25<span class="plane">✈︎</span></div>
+        <div class="day rome">26</div>
+        <div class="day rome">27</div>
         <div class="day travel" style="--from-color:var(--barcelona);--to-color:var(--nyc)">28<span class="plane">✈︎</span></div>
         <div class="day travel" style="--from-color:var(--nyc);--to-color:var(--portland)">29<span class="plane">✈︎</span></div>
         <div class="day portland">30</div><div class="day portland">31</div>
@@ -710,6 +807,55 @@
         <div class="flight-times">6:25 PM → 9:00 PM <span class="flight-duration">2h 35m</span></div>
         <div class="flight-conf">Conf: <strong>COPGWJ</strong> · $93</div>
         <div class="flight-note">Home to Phoenix · final leg of summer</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="notes">
+    <h2>Europe tour · post-classes</h2>
+    <p class="trip-intro">After classes end July 17, I'm traveling with a friend through Spain, France, and Italy before flying home. Want to join for a stop? Let me know! · 10 nights · 5 cities · 4 countries</p>
+    <div class="trip-grid">
+
+      <div class="trip-card madrid">
+        <div class="trip-city">Madrid</div>
+        <div class="trip-country">Spain</div>
+        <div class="trip-nights">2 nights</div>
+        <div class="trip-dates">Sun Jul 19 – Tue Jul 21</div>
+        <div class="trip-hotel">Spark by Hilton Madrid Alcalá<div class="trip-hotel-room">Twin Room · Calle de Albarracín, 42 · San Blas-Canillejas, 28037 Madrid · 15 min from Madrid-Barajas Airport (MAD) · walking distance to García Noblejas &amp; Ciudad Lineal Metro</div></div>
+      </div>
+
+      <div class="trip-card paris">
+        <div class="trip-city">Paris</div>
+        <div class="trip-country">France</div>
+        <div class="trip-nights">2 nights</div>
+        <div class="trip-dates">Tue Jul 21 – Thu Jul 23</div>
+        <div class="trip-hotel">Le Belgrand Hotel Paris Champs Élysées (Tapestry by Hilton)<div class="trip-hotel-room">Double Guest Room · 51 Rue Lauriston · 16th arr., 75116 Paris · +33 1 5626 5929 · 10-min walk to Arc de Triomphe</div></div>
+      </div>
+
+      <div class="trip-card florence">
+        <div class="trip-city">Florence</div>
+        <div class="trip-country">Italy</div>
+        <div class="trip-nights">2 nights</div>
+        <div class="trip-dates">Thu Jul 23 – Sat Jul 25</div>
+        <div class="trip-hotel">DoubleTree by Hilton Florence Metropole<div class="trip-hotel-room">Twin Guest Room · Via del Cavallaccio, 36 · 50142 Firenze · +39 055 78711 · 3 km / 10 min from Florence Airport · <strong>complimentary courtesy van</strong> to tramway</div></div>
+      </div>
+
+      <div class="trip-card rome">
+        <div class="trip-city">Rome</div>
+        <div class="trip-country">Italy · 3 nights total</div>
+        <div class="trip-nights">3 nights</div>
+        <div class="trip-dates">Sat Jul 25 – Tue Jul 28</div>
+        <div class="trip-hotel">Sat: Hilton Garden Inn Rome Colosseum<div class="trip-hotel-room">Twin Room · Via Emanuele Filiberto, 173 · 00185 Rome · +39 06 770 121 · 20-min walk to Colosseum &amp; Termini · Manzoni Metro nearby</div></div>
+        <div class="trip-hotel">Sun &amp; Mon: Hilton Rome Eur La Lama<div class="trip-hotel-room">Two Double Beds · Viale Europa, 287 · 00144 Rome (EUR district) · +39 06 452409 · 4-min walk to EUR Fermi Metro · 20 min to FCO/Ciampino airports</div></div>
+      </div>
+
+      <div class="trip-card nyc">
+        <div class="trip-city">New York City</div>
+        <div class="trip-country">USA</div>
+        <div class="trip-nights">1 night</div>
+        <div class="trip-dates">Tue Jul 28 – Wed Jul 29</div>
+        <div class="trip-hotel">Hampton Inn NY-JFK<div class="trip-hotel-room">2 Queens · Non-smoking · 144-10 135th Avenue · Jamaica, NY 11436 · +1 718-322-7500 · 2 mi from JFK · <strong>free airport shuttle</strong> — call ahead</div></div>
       </div>
 
     </div>
