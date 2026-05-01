@@ -23,6 +23,7 @@
     --florence: #7C5A3C;
     --rome: #8B3A2E;
     --santa-ana: #D88847;
+    --san-diego: #4A8FB8;
     --travel: #8B6F3F;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -172,6 +173,7 @@
   .day.florence { background: var(--florence); color: #F5EFE6; }
   .day.rome { background: var(--rome); color: #FEF0EC; }
   .day.santa-ana { background: var(--santa-ana); color: #2A2118; }
+  .day.san-diego { background: var(--san-diego); color: #F0F5FA; }
   .day.travel {
     background: linear-gradient(135deg, var(--from-color, var(--phoenix)) 0 50%, var(--to-color, var(--portland)) 50% 100%);
     color: #FEF6EC;
@@ -367,6 +369,7 @@
   .flight-card.london { border-left-color: var(--london); }
   .flight-card.barcelona { border-left-color: var(--barcelona); }
   .flight-card.nyc { border-left-color: var(--nyc); }
+  .flight-card.san-diego { border-left-color: var(--san-diego); }
   .flight-card.tentative::after {
     content: "tentative";
     position: absolute;
@@ -441,6 +444,7 @@
   .flight-card.london .flight-conf strong { color: var(--london); }
   .flight-card.barcelona .flight-conf strong { color: var(--barcelona); }
   .flight-card.nyc .flight-conf strong { color: var(--nyc); }
+  .flight-card.san-diego .flight-conf strong { color: var(--san-diego); }
   .flight-note {
     font-family: 'DM Sans', sans-serif;
     font-size: 11px;
@@ -566,6 +570,7 @@
   .addr-block.barcelona { border-left-color: var(--barcelona); }
   .addr-block.london { border-left-color: var(--london); }
   .addr-block.nyc { border-left-color: var(--nyc); }
+  .addr-block.san-diego { border-left-color: var(--san-diego); }
   .addr-label {
     font-family: 'Fraunces', serif;
     font-weight: 700;
@@ -625,6 +630,7 @@
     <div class="legend-item"><span class="swatch" style="background:var(--phoenix)"></span> Phoenix (home)</div>
     <div class="legend-item"><span class="swatch" style="background:var(--portland)"></span> Portland</div>
     <div class="legend-item"><span class="swatch" style="background:var(--santa-ana)"></span> Santa Ana</div>
+    <div class="legend-item"><span class="swatch" style="background:var(--san-diego)"></span> San Diego</div>
     <div class="legend-item"><span class="swatch" style="background:var(--london)"></span> London</div>
     <div class="legend-item"><span class="swatch" style="background:var(--barcelona)"></span> Barcelona</div>
     <div class="legend-item"><span class="swatch" style="background:var(--madrid)"></span> Madrid</div>
@@ -647,8 +653,8 @@
         <!-- May 2026 starts Fri -->
         <div class="day empty"></div><div class="day empty"></div><div class="day empty"></div><div class="day empty"></div><div class="day empty"></div>
         <div class="day phoenix">1</div><div class="day phoenix">2</div>
-        <div class="day phoenix">3</div><div class="day phoenix">4</div><div class="day phoenix">5</div><div class="day phoenix">6</div><div class="day phoenix">7</div><div class="day phoenix">8</div><div class="day phoenix">9</div>
-        <div class="day phoenix">10</div><div class="day phoenix">11</div>
+        <div class="day phoenix">3</div><div class="day phoenix">4</div><div class="day phoenix">5</div><div class="day phoenix">6</div><div class="day phoenix">7</div><div class="day phoenix">8</div><div class="day travel" style="--from-color:var(--phoenix);--to-color:var(--san-diego)">9<span class="plane">✈︎</span></div>
+        <div class="day travel" style="--from-color:var(--san-diego);--to-color:var(--phoenix)">10<span class="plane">✈︎</span></div><div class="day phoenix">11</div>
         <div class="day travel" style="--from-color:var(--phoenix);--to-color:var(--portland)">12<span class="plane">✈︎</span></div>
         <div class="day portland">13</div><div class="day portland">14</div><div class="day portland">15</div><div class="day portland">16</div>
         <div class="day portland">17</div><div class="day portland">18</div><div class="day portland">19</div><div class="day portland">20</div><div class="day portland">21</div><div class="day portland">22</div>
@@ -731,6 +737,22 @@
   <div class="notes">
     <h2>Flight itinerary</h2>
     <div class="flight-grid">
+
+      <div class="flight-card san-diego">
+        <div class="flight-date">Sat · May 9, 2026</div>
+        <div class="flight-route">PHX → SAN</div>
+        <div class="flight-airline"><strong>Frontier</strong></div>
+        <div class="flight-times">4:41 PM → 6:00 PM</div>
+        <div class="flight-note">San Diego birthday weekend 🎂</div>
+      </div>
+
+      <div class="flight-card">
+        <div class="flight-date">Sun · May 10, 2026</div>
+        <div class="flight-route">SAN → PHX</div>
+        <div class="flight-airline"><strong>Southwest</strong></div>
+        <div class="flight-times">9:35 PM <span class="flight-duration">depart</span></div>
+        <div class="flight-note">Return from birthday weekend</div>
+      </div>
 
       <div class="flight-card portland">
         <div class="flight-date">Tue · May 12, 2026</div>
@@ -950,6 +972,11 @@
   <div class="addresses">
     <h2>Addresses & locations</h2>
     <div class="addr-grid">
+      <div class="addr-block san-diego">
+        <div class="addr-label">DoubleTree by Hilton La Jolla · birthday weekend</div>
+        <div class="addr-dates">May 9 – May 10 · 1 night</div>
+        <div class="addr-text">2261 Avenida de la Playa<br>La Jolla, CA 92037, USA<em>San Diego trip · check-out Sun May 10 at noon · Southwest return flight 9:35 PM</em></div>
+      </div>
       <div class="addr-block">
         <div class="addr-label">Portland · first part of summer</div>
         <div class="addr-dates">May 12 – June 16</div>

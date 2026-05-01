@@ -19,6 +19,7 @@
     --barcelona: #E5A42B;
     --nyc: #6B2A3D;
     --santa-ana: #D88847;
+    --san-diego: #4A8FB8;
     --travel: #8B6F3F;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -164,6 +165,7 @@
   .day.barcelona { background: var(--barcelona); color: #2A2118; }
   .day.nyc { background: var(--nyc); color: #FBF0F2; }
   .day.santa-ana { background: var(--santa-ana); color: #2A2118; }
+  .day.san-diego { background: var(--san-diego); color: #F0F5FA; }
   .day.travel {
     background: linear-gradient(135deg, var(--from-color, var(--phoenix)) 0 50%, var(--to-color, var(--portland)) 50% 100%);
     color: #FEF6EC;
@@ -258,6 +260,7 @@
   .lodge-card.london { border-left-color: var(--london); }
   .lodge-card.barcelona { border-left-color: var(--barcelona); }
   .lodge-card.nyc { border-left-color: var(--nyc); }
+  .lodge-card.san-diego { border-left-color: var(--san-diego); }
   .lodge-where {
     font-family: 'DM Sans', sans-serif;
     font-size: 10px;
@@ -278,6 +281,7 @@
   .lodge-card.london .lodge-when { color: var(--london); }
   .lodge-card.barcelona .lodge-when { color: #B58320; }
   .lodge-card.nyc .lodge-when { color: var(--nyc); }
+  .lodge-card.san-diego .lodge-when { color: var(--san-diego); }
   .lodge-with {
     font-family: 'Fraunces', serif;
     font-weight: 700;
@@ -325,6 +329,7 @@
     <div class="legend-item"><span class="swatch" style="background:var(--phoenix)"></span> Phoenix (casa)</div>
     <div class="legend-item"><span class="swatch" style="background:var(--portland)"></span> Portland</div>
     <div class="legend-item"><span class="swatch" style="background:var(--santa-ana)"></span> Santa Ana</div>
+    <div class="legend-item"><span class="swatch" style="background:var(--san-diego)"></span> San Diego</div>
     <div class="legend-item"><span class="swatch" style="background:var(--london)"></span> Londres</div>
     <div class="legend-item"><span class="swatch" style="background:var(--barcelona)"></span> Barcelona</div>
     <div class="legend-item"><span class="swatch" style="background:var(--nyc)"></span> Nueva York</div>
@@ -344,8 +349,8 @@
         <!-- Mayo 2026 empieza viernes -->
         <div class="day empty"></div><div class="day empty"></div><div class="day empty"></div><div class="day empty"></div><div class="day empty"></div>
         <div class="day phoenix">1</div><div class="day phoenix">2</div>
-        <div class="day phoenix">3</div><div class="day phoenix">4</div><div class="day phoenix">5</div><div class="day phoenix">6</div><div class="day phoenix">7</div><div class="day phoenix">8</div><div class="day phoenix">9</div>
-        <div class="day phoenix">10</div><div class="day phoenix">11</div>
+        <div class="day phoenix">3</div><div class="day phoenix">4</div><div class="day phoenix">5</div><div class="day phoenix">6</div><div class="day phoenix">7</div><div class="day phoenix">8</div><div class="day travel" style="--from-color:var(--phoenix);--to-color:var(--san-diego)">9<span class="plane">✈︎</span></div>
+        <div class="day travel" style="--from-color:var(--san-diego);--to-color:var(--phoenix)">10<span class="plane">✈︎</span></div><div class="day phoenix">11</div>
         <div class="day travel" style="--from-color:var(--phoenix);--to-color:var(--portland)">12<span class="plane">✈︎</span></div>
         <div class="day portland">13</div><div class="day portland">14</div><div class="day portland">15</div><div class="day portland">16</div>
         <div class="day portland">17</div><div class="day portland">18</div><div class="day portland">19</div><div class="day portland">20</div><div class="day portland">21</div><div class="day portland">22</div>
@@ -428,17 +433,19 @@
   <div class="notes">
     <h2>Fechas clave y días de viaje</h2>
     <ul>
-      <li><span class="date-tag">12 de mayo</span><span><strong>PHX → PDX</strong> · Southwest, por la noche. Empieza la primera temporada en Portland.</span></li>
+      <li><span class="date-tag">9 de mayo</span><span><strong>PHX → SAN</strong> · 4:41 PM – 6:00 PM. Fin de semana de cumpleaños en San Diego 🎂</span></li>
+      <li><span class="date-tag">10 de mayo</span><span><strong>SAN → PHX</strong> · 9:35 PM. Vuelta de San Diego.</span></li>
+      <li><span class="date-tag">12 de mayo</span><span><strong>PHX → PDX</strong> · Por la noche. Empieza la primera temporada en Portland.</span></li>
       <li><span class="date-tag">28 de mayo</span><span><strong>PDX → PHX</strong> · Vuelta a Phoenix tras dos semanas en Portland.</span></li>
-      <li><span class="date-tag">30 de mayo</span><span><strong>PHX → SNA</strong> · Southwest 7:05 PM. Escapada a Santa Ana, California.</span></li>
-      <li><span class="date-tag">2 de junio</span><span><strong>SNA → PDX</strong> · Southwest 7:50 AM – 11:45 AM. De Santa Ana a Portland.</span></li>
+      <li><span class="date-tag">30 de mayo</span><span><strong>PHX → SNA</strong> · 7:05 PM. Escapada a Santa Ana, California.</span></li>
+      <li><span class="date-tag">2 de junio</span><span><strong>SNA → PDX</strong> · 7:50 AM – 11:45 AM. De Santa Ana a Portland.</span></li>
       <li><span class="date-tag">16–17 de junio</span><span><strong>PDX → PHX → LHR</strong> · Llego a Phoenix la noche del 16 y salgo a Londres la noche siguiente.</span></li>
       <li><span class="date-tag">18 de junio</span><span>Llegada a Londres (15:05 hora local). Una noche allí.</span></li>
       <li><span class="date-tag">19 de junio</span><span><strong>LHR → BCN</strong> · Vuelo temprano a Barcelona. Empieza el verano en España.</span></li>
       <li><span class="date-tag">17 de julio</span><span><strong>Terminan las clases en Barcelona.</strong></span></li>
       <li><span class="date-tag">18–27 de julio</span><span><em>Planes por confirmar</em> — en algún lugar de Europa antes del vuelo desde Roma el 28 de julio.</span></li>
-      <li><span class="date-tag">28 de julio</span><span><strong>FCO → JFK</strong> · De Roma a Nueva York. Norse N0401, 7:05 PM → 10:30 PM. Noche en NYC.</span></li>
-      <li><span class="date-tag">29 de julio</span><span><strong>JFK → PDX</strong> · De Nueva York a Portland. Alaska 19, 5:08 PM → 8:33 PM.</span></li>
+      <li><span class="date-tag">28 de julio</span><span><strong>FCO → JFK</strong> · De Roma a Nueva York. 7:05 PM → 10:30 PM. Noche en NYC.</span></li>
+      <li><span class="date-tag">29 de julio</span><span><strong>JFK → PDX</strong> · De Nueva York a Portland. 5:08 PM → 8:33 PM.</span></li>
       <li><span class="date-tag">12 de agosto <em>(tentativo)</em></span><span><strong>PDX → PHX</strong> · Vuelta a Phoenix. La fecha puede cambiar.</span></li>
     </ul>
   </div>
@@ -447,6 +454,13 @@
     <h2>Dónde me hospedo</h2>
     <p class="lodging-intro">Para que sepas dónde encontrarme y con quién estoy en cada parte del verano. Mi trabajo en Portland es con <strong>Northwest Workers Justice Project</strong>.</p>
     <div class="lodge-grid">
+
+      <div class="lodge-card san-diego">
+        <div class="lodge-where">San Diego, California</div>
+        <div class="lodge-when">9 – 10 mayo · 1 noche</div>
+        <div class="lodge-with">DoubleTree by Hilton La Jolla</div>
+        <div class="lodge-detail">Fin de semana de cumpleaños 🎂. 2261 Avenida de la Playa, La Jolla, CA 92037.</div>
+      </div>
 
       <div class="lodge-card portland">
         <div class="lodge-where">Portland · primera parte</div>
