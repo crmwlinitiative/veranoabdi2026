@@ -216,6 +216,84 @@
     color: var(--phoenix);
   }
 
+  .lodging {
+    margin-top: 32px;
+    padding: 28px 32px;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+  }
+  .lodging h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-style: italic;
+    font-size: 24px;
+    margin-bottom: 6px;
+  }
+  .lodging-intro {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin-bottom: 18px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .lodge-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 14px;
+  }
+  .lodge-card {
+    padding: 14px 18px;
+    background: rgba(217, 201, 168, 0.18);
+    border-left: 3px solid var(--phoenix);
+    border-radius: 0 3px 3px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .lodge-card.portland { border-left-color: var(--portland); }
+  .lodge-card.santa-ana { border-left-color: var(--santa-ana); }
+  .lodge-card.london { border-left-color: var(--london); }
+  .lodge-card.barcelona { border-left-color: var(--barcelona); }
+  .lodge-card.nyc { border-left-color: var(--nyc); }
+  .lodge-where {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--ink-soft);
+    font-weight: 700;
+  }
+  .lodge-when {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--phoenix);
+    margin-top: 1px;
+  }
+  .lodge-card.portland .lodge-when { color: var(--portland); }
+  .lodge-card.santa-ana .lodge-when { color: #B07028; }
+  .lodge-card.london .lodge-when { color: var(--london); }
+  .lodge-card.barcelona .lodge-when { color: #B58320; }
+  .lodge-card.nyc .lodge-when { color: var(--nyc); }
+  .lodge-with {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--ink);
+    margin-top: 6px;
+    line-height: 1.3;
+  }
+  .lodge-detail {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    margin-top: 4px;
+  }
+
   footer {
     margin-top: 48px;
     text-align: center;
@@ -352,17 +430,67 @@
     <ul>
       <li><span class="date-tag">12 de mayo</span><span><strong>PHX → PDX</strong> · Southwest, por la noche. Empieza la primera temporada en Portland.</span></li>
       <li><span class="date-tag">28 de mayo</span><span><strong>PDX → PHX</strong> · Vuelta a Phoenix tras dos semanas en Portland.</span></li>
-      <li><span class="date-tag">30 de mayo</span><span><strong>PHX → SNA</strong> · Southwest 7:05 PM. Escapada a Santa Ana, California. Conf: B65FFG</span></li>
-      <li><span class="date-tag">2 de junio</span><span><strong>SNA → PDX</strong> · Southwest 7:50 AM – 11:45 AM. De Santa Ana a Portland. Conf: B5YC25</span></li>
+      <li><span class="date-tag">30 de mayo</span><span><strong>PHX → SNA</strong> · Southwest 7:05 PM. Escapada a Santa Ana, California.</span></li>
+      <li><span class="date-tag">2 de junio</span><span><strong>SNA → PDX</strong> · Southwest 7:50 AM – 11:45 AM. De Santa Ana a Portland.</span></li>
       <li><span class="date-tag">16–17 de junio</span><span><strong>PDX → PHX → LHR</strong> · Llego a Phoenix la noche del 16 y salgo a Londres la noche siguiente.</span></li>
       <li><span class="date-tag">18 de junio</span><span>Llegada a Londres (15:05 hora local). Una noche allí.</span></li>
       <li><span class="date-tag">19 de junio</span><span><strong>LHR → BCN</strong> · Vuelo temprano a Barcelona. Empieza el verano en España.</span></li>
       <li><span class="date-tag">17 de julio</span><span><strong>Terminan las clases en Barcelona.</strong></span></li>
       <li><span class="date-tag">18–27 de julio</span><span><em>Planes por confirmar</em> — en algún lugar de Europa antes del vuelo desde Roma el 28 de julio.</span></li>
       <li><span class="date-tag">28 de julio</span><span><strong>FCO → JFK</strong> · De Roma a Nueva York. Norse N0401, 7:05 PM → 10:30 PM. Noche en NYC.</span></li>
-      <li><span class="date-tag">29 de julio</span><span><strong>JFK → PDX</strong> · De Nueva York a Portland. Alaska 19, 5:08 PM → 8:33 PM. Conf: KCBAGE.</span></li>
+      <li><span class="date-tag">29 de julio</span><span><strong>JFK → PDX</strong> · De Nueva York a Portland. Alaska 19, 5:08 PM → 8:33 PM.</span></li>
       <li><span class="date-tag">12 de agosto <em>(tentativo)</em></span><span><strong>PDX → PHX</strong> · Vuelta a Phoenix. La fecha puede cambiar.</span></li>
     </ul>
+  </div>
+
+  <div class="lodging">
+    <h2>Dónde me hospedo</h2>
+    <p class="lodging-intro">Para que sepas dónde encontrarme y con quién estoy en cada parte del verano. Mi trabajo en Portland es con <strong>Northwest Workers Justice Project</strong>.</p>
+    <div class="lodge-grid">
+
+      <div class="lodge-card portland">
+        <div class="lodge-where">Portland · primera parte</div>
+        <div class="lodge-when">12 mayo – 16 junio</div>
+        <div class="lodge-with">Airbnb en Portland</div>
+        <div class="lodge-detail">Cerca de mi trabajo con <strong>Northwest Workers Justice Project</strong>, y los fines de semana con mi hna. <strong>Sua Lopez</strong> en Canby.</div>
+      </div>
+
+      <div class="lodge-card santa-ana">
+        <div class="lodge-where">Santa Ana, California</div>
+        <div class="lodge-when">30 mayo – 2 junio</div>
+        <div class="lodge-with">Casa de mi tía Eggla García</div>
+        <div class="lodge-detail">Visita familiar de fin de semana antes de regresar a Portland.</div>
+      </div>
+
+      <div class="lodge-card london">
+        <div class="lodge-where">Londres · escala</div>
+        <div class="lodge-when">17 – 19 junio</div>
+        <div class="lodge-with">Airbnb cerca del aeropuerto Heathrow</div>
+        <div class="lodge-detail">Una noche en Londres antes del vuelo temprano a Barcelona.</div>
+      </div>
+
+      <div class="lodge-card barcelona">
+        <div class="lodge-where">Barcelona, España</div>
+        <div class="lodge-when">19 junio – 27 julio</div>
+        <div class="lodge-with">Airbnb de la hna. Liliana de la iglesia de Barcelona</div>
+        <div class="lodge-detail">Está a 5 min del templo de Barcelona. Me hospedo con <strong>Liliana</strong> (hna. de la iglesia LLDM) en su Airbnb durante todo el programa de verano de la escuela de derecho.</div>
+      </div>
+
+      <div class="lodge-card nyc">
+        <div class="lodge-where">Nueva York · escala</div>
+        <div class="lodge-when">28 – 29 julio</div>
+        <div class="lodge-with">Hotel cerca del aeropuerto JFK</div>
+        <div class="lodge-detail">Una noche entre el vuelo de Roma y el vuelo a Portland al día siguiente.</div>
+      </div>
+
+      <div class="lodge-card portland">
+        <div class="lodge-where">Portland · segunda parte</div>
+        <div class="lodge-when">29 julio – 12 agosto</div>
+        <div class="lodge-with">Airbnb en Portland + casa de mi hermano Otoniel Lopez en Canby</div>
+        <div class="lodge-detail">Algunas noches en Airbnb cerca del trabajo con <strong>Northwest Workers Justice Project</strong>, otras en casa de mi hermano <strong>Otoniel Lopez</strong> en Canby, Oregon.</div>
+      </div>
+
+    </div>
   </div>
 
   <footer>
