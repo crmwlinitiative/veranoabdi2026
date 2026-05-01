@@ -22,6 +22,7 @@
     --paris: #5B7FA8;
     --florence: #7C5A3C;
     --rome: #8B3A2E;
+    --santa-ana: #D88847;
     --travel: #8B6F3F;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -170,6 +171,7 @@
   .day.paris { background: var(--paris); color: #F0F4FA; }
   .day.florence { background: var(--florence); color: #F5EFE6; }
   .day.rome { background: var(--rome); color: #FEF0EC; }
+  .day.santa-ana { background: var(--santa-ana); color: #2A2118; }
   .day.travel {
     background: linear-gradient(135deg, var(--from-color, var(--phoenix)) 0 50%, var(--to-color, var(--portland)) 50% 100%);
     color: #FEF6EC;
@@ -622,6 +624,7 @@
   <div class="legend">
     <div class="legend-item"><span class="swatch" style="background:var(--phoenix)"></span> Phoenix (home)</div>
     <div class="legend-item"><span class="swatch" style="background:var(--portland)"></span> Portland</div>
+    <div class="legend-item"><span class="swatch" style="background:var(--santa-ana)"></span> Santa Ana</div>
     <div class="legend-item"><span class="swatch" style="background:var(--london)"></span> London</div>
     <div class="legend-item"><span class="swatch" style="background:var(--barcelona)"></span> Barcelona</div>
     <div class="legend-item"><span class="swatch" style="background:var(--madrid)"></span> Madrid</div>
@@ -638,7 +641,7 @@
     <!-- MAY -->
     <div class="month">
       <div class="month-title"><span class="month-title-main">May</span> <span>2026</span></div>
-      <div class="month-sub">Portland stretch · one trip home</div>
+      <div class="month-sub">Portland stretch · Santa Ana side trip</div>
       <div class="cal">
         <div class="dow">S</div><div class="dow">M</div><div class="dow">T</div><div class="dow">W</div><div class="dow">T</div><div class="dow">F</div><div class="dow">S</div>
         <!-- May 2026 starts Fri -->
@@ -654,8 +657,9 @@
         <div class="day portland">26</div>
         <div class="day portland">27</div>
         <div class="day travel" style="--from-color:var(--portland);--to-color:var(--phoenix)">28<span class="plane">✈︎</span></div>
-        <div class="day phoenix">29</div><div class="day phoenix">30</div>
-        <div class="day phoenix">31</div>
+        <div class="day phoenix">29</div>
+        <div class="day travel" style="--from-color:var(--phoenix);--to-color:var(--santa-ana)">30<span class="plane">✈︎</span></div>
+        <div class="day santa-ana">31</div>
       </div>
     </div>
 
@@ -667,8 +671,8 @@
         <div class="dow">S</div><div class="dow">M</div><div class="dow">T</div><div class="dow">W</div><div class="dow">T</div><div class="dow">F</div><div class="dow">S</div>
         <!-- June 2026 starts Mon -->
         <div class="day empty"></div>
-        <div class="day phoenix">1</div>
-        <div class="day travel" style="--from-color:var(--phoenix);--to-color:var(--portland)">2<span class="plane">✈︎</span></div>
+        <div class="day santa-ana">1</div>
+        <div class="day travel" style="--from-color:var(--santa-ana);--to-color:var(--portland)">2<span class="plane">✈︎</span></div>
         <div class="day portland">3</div><div class="day portland">4</div><div class="day portland">5</div><div class="day portland">6</div>
         <div class="day portland">7</div><div class="day portland">8</div><div class="day portland">9</div><div class="day portland">10</div><div class="day portland">11</div><div class="day portland">12</div><div class="day portland">13</div>
         <div class="day portland">14</div><div class="day portland">15</div>
@@ -746,13 +750,22 @@
         <div class="flight-note">Home to Phoenix after 2 weeks in Portland</div>
       </div>
 
+      <div class="flight-card">
+        <div class="flight-date">Sat · May 30, 2026</div>
+        <div class="flight-route">PHX → SNA</div>
+        <div class="flight-airline"><strong>Southwest</strong></div>
+        <div class="flight-times">7:05 PM</div>
+        <div class="flight-conf">Conf: <strong>B65FFG</strong></div>
+        <div class="flight-note">Phoenix to Santa Ana · weekend stop in California</div>
+      </div>
+
       <div class="flight-card portland">
         <div class="flight-date">Tue · Jun 2, 2026</div>
-        <div class="flight-route">PHX → PDX</div>
+        <div class="flight-route">SNA → PDX</div>
         <div class="flight-airline"><strong>Southwest</strong></div>
-        <div class="flight-times">8:20 PM → 11:00 PM</div>
-        <div class="flight-conf">Conf: <strong>BRFEEK</strong></div>
-        <div class="flight-note">Back to Portland for 2 weeks</div>
+        <div class="flight-times">7:50 AM → 11:45 AM</div>
+        <div class="flight-conf">Conf: <strong>B5YC25</strong></div>
+        <div class="flight-note">Santa Ana back to Portland · morning flight</div>
       </div>
 
       <div class="flight-card">
