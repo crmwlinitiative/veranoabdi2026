@@ -18,6 +18,7 @@
     --london: #2C3E5C;
     --barcelona: #E5A42B;
     --nyc: #6B2A3D;
+    --santa-ana: #D88847;
     --travel: #8B6F3F;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -162,6 +163,7 @@
   .day.london { background: var(--london); color: #F0F1F5; }
   .day.barcelona { background: var(--barcelona); color: #2A2118; }
   .day.nyc { background: var(--nyc); color: #FBF0F2; }
+  .day.santa-ana { background: var(--santa-ana); color: #2A2118; }
   .day.travel {
     background: linear-gradient(135deg, var(--from-color, var(--phoenix)) 0 50%, var(--to-color, var(--portland)) 50% 100%);
     color: #FEF6EC;
@@ -244,6 +246,7 @@
   <div class="legend">
     <div class="legend-item"><span class="swatch" style="background:var(--phoenix)"></span> Phoenix (casa)</div>
     <div class="legend-item"><span class="swatch" style="background:var(--portland)"></span> Portland</div>
+    <div class="legend-item"><span class="swatch" style="background:var(--santa-ana)"></span> Santa Ana</div>
     <div class="legend-item"><span class="swatch" style="background:var(--london)"></span> Londres</div>
     <div class="legend-item"><span class="swatch" style="background:var(--barcelona)"></span> Barcelona</div>
     <div class="legend-item"><span class="swatch" style="background:var(--nyc)"></span> Nueva York</div>
@@ -257,7 +260,7 @@
     <!-- MAYO -->
     <div class="month">
       <div class="month-title"><span class="month-title-main">Mayo</span> <span>2026</span></div>
-      <div class="month-sub">Temporada en Portland · una vuelta a casa</div>
+      <div class="month-sub">Temporada en Portland · escapada a Santa Ana</div>
       <div class="cal">
         <div class="dow">D</div><div class="dow">L</div><div class="dow">M</div><div class="dow">X</div><div class="dow">J</div><div class="dow">V</div><div class="dow">S</div>
         <!-- Mayo 2026 empieza viernes -->
@@ -273,8 +276,9 @@
         <div class="day portland">26</div>
         <div class="day portland">27</div>
         <div class="day travel" style="--from-color:var(--portland);--to-color:var(--phoenix)">28<span class="plane">✈︎</span></div>
-        <div class="day phoenix">29</div><div class="day phoenix">30</div>
-        <div class="day phoenix">31</div>
+        <div class="day phoenix">29</div>
+        <div class="day travel" style="--from-color:var(--phoenix);--to-color:var(--santa-ana)">30<span class="plane">✈︎</span></div>
+        <div class="day santa-ana">31</div>
       </div>
     </div>
 
@@ -286,8 +290,8 @@
         <div class="dow">D</div><div class="dow">L</div><div class="dow">M</div><div class="dow">X</div><div class="dow">J</div><div class="dow">V</div><div class="dow">S</div>
         <!-- Junio 2026 empieza lunes -->
         <div class="day empty"></div>
-        <div class="day phoenix">1</div>
-        <div class="day travel" style="--from-color:var(--phoenix);--to-color:var(--portland)">2<span class="plane">✈︎</span></div>
+        <div class="day santa-ana">1</div>
+        <div class="day travel" style="--from-color:var(--santa-ana);--to-color:var(--portland)">2<span class="plane">✈︎</span></div>
         <div class="day portland">3</div><div class="day portland">4</div><div class="day portland">5</div><div class="day portland">6</div>
         <div class="day portland">7</div><div class="day portland">8</div><div class="day portland">9</div><div class="day portland">10</div><div class="day portland">11</div><div class="day portland">12</div><div class="day portland">13</div>
         <div class="day portland">14</div><div class="day portland">15</div>
@@ -348,7 +352,8 @@
     <ul>
       <li><span class="date-tag">12 de mayo</span><span><strong>PHX → PDX</strong> · Southwest, por la noche. Empieza la primera temporada en Portland.</span></li>
       <li><span class="date-tag">28 de mayo</span><span><strong>PDX → PHX</strong> · Vuelta a Phoenix tras dos semanas en Portland.</span></li>
-      <li><span class="date-tag">2 de junio</span><span><strong>PHX → PDX</strong> · De regreso a Portland por dos semanas.</span></li>
+      <li><span class="date-tag">30 de mayo</span><span><strong>PHX → SNA</strong> · Southwest 7:05 PM. Escapada a Santa Ana, California. Conf: B65FFG</span></li>
+      <li><span class="date-tag">2 de junio</span><span><strong>SNA → PDX</strong> · Southwest 7:50 AM – 11:45 AM. De Santa Ana a Portland. Conf: B5YC25</span></li>
       <li><span class="date-tag">16–17 de junio</span><span><strong>PDX → PHX → LHR</strong> · Llego a Phoenix la noche del 16 y salgo a Londres la noche siguiente.</span></li>
       <li><span class="date-tag">18 de junio</span><span>Llegada a Londres (15:05 hora local). Una noche allí.</span></li>
       <li><span class="date-tag">19 de junio</span><span><strong>LHR → BCN</strong> · Vuelo temprano a Barcelona. Empieza el verano en España.</span></li>
